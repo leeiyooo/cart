@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECEIPT</title>
+    <link rel="stylesheet" href="FINAL2.CSS">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">
+            YOUR RECEIPT 
+          </div>
+
+          <div class="form">
+            <div class="inputfield">
+              <p id="i1"></p>
+          </div>
+          <div class="form">
+              <div class="inputfield">
+                  <p id="i2"></p>
+            </div>
+            <div class="form">
+              <div class="inputfield">
+                  <p id="i3"></p>
+            </div>
+            <div class="form">
+                <div class="inputfield">
+                  <p id="i4"></p>
+              </div>
+                <div class="form">
+                <div class="inputfield">
+                  <p id="i5"></p>
+              </div>
+              <div class="form">
+                <div class="inputfield">
+                  <p id="i6"></p>
+              </div>
+
+
+
+
+    <script>
+
+    var q1 = document.getElementById("i1");
+    q1.innerHTML = "ITEM DESCRIPTION :" + localStorage.getItem("re1");
+
+    var q2 = document.getElementById("i2");
+    q2.innerHTML = "ITEM PRICE :" + localStorage.getItem("re2");
+
+    var q3 = document.getElementById("i3");
+    q3.innerHTML = "ITEM QUANTITY :" + localStorage.getItem("re3");
+
+    var q4 = document.getElementById("i4");
+    q4.innerHTML = "TOTAL PRICE :" + localStorage.getItem("re4");
+
+    var q5 = document.getElementById("i5");
+    q5.innerHTML = "CASH RECEIVED:" + localStorage.getItem("re5");
+
+    var q6 = document.getElementById("i6");
+    q6.innerHTML = "CASH CHANGE :" + localStorage.getItem("re6");
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Gaming  </title>  
+    <link rel="stylesheet" href="style1.css">
+
+</head>
+<body>
+    <div class="wrapper">
+   
+   
+        <div class="title">
+           WEB Log-in
+          </div>
+   
+          <div class="form">
+            <div class="inputfield">
+               <label>Username:</label>
+               <input type="text" id="user" class="input">
+            </div>  
+            <div class="inputfield">
+                <label>Password:</label>
+                <input type="password" id="pass" class="input">
+             </div>  
+             
+             <div class="inputfield">
+            <button  class="btn" id="login">LOGIN</button>
+             </div>
+
+
+   <script>
+   
+   var ln = document.getElementById("login");
+      
+      ln.addEventListener("click",function(){
+      
+      var user=document.getElementById("user").value;
+      var pass=document.getElementById("pass").value;
+      
+      us = localStorage.getItem("r2");
+      ps = localStorage.getItem("r3");
+      
+      if ( user == us  && pass == ps){   
+         
+          window.location.href = "addtocart.html";
+          alert("Log-In Successful")
+      }
+
+      else{
+          if(user=="" && pass==""){
+             alert("Pleass Input Something");
+          }
+          else if(user!=us){
+          alert("Invalid Username!");
+          }
+          else if(pass!=ps){
+          alert("Invalid Password");
+          }
+          else{
+             alert("Something is Wrong");
+          }
+      }
+      
+      });
+</script>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Transaction </title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">
+           WEB Gaming
+          </div>
+          <div class="form">
+            <div class="inputfield">
+                <label>ITEM DESCRIPTION</label>
+                <input type="text" id="name" class="input">
+             </div> 
+             <br>
+            <div class="inputfield">
+               <label>ITEM PRICE</label>
+               <input type="number" name="" id="num1" class="input">
+            </div>  
+            <br>
+            <div class="inputfield">
+                <label>QUANTITY</label>
+                <input type="number" name="" id="num2" class="input">
+             </div>  
+             <br>
+             
+             <p class="tot" id="TP"></p>
+             <br>
+             <div class="inputfield">
+                <button  class="btn1" onclick="pid1()">TOTAL</button>
+                </div>
+                <br>
+                <div class="inputfield">
+                    <label>CASH</label>
+                    <input type="number" name="" id="num3" class="input">
+                 </div>  
+                 <br>
+                 <div class="inputfield">
+                    <button  class="btn1" onclick="pid2()">CHANGE</button>
+                    </div>
+                    <p class="ch" id="TC"></p>
+                    <br>
+                    <div class="inputfield">
+                        <button  class="btn1" id="receipt">RECEIPT</button>
+                        </div>
+
+
+
+    </div>
+    <script>
+
+var tp;
+var cheyj;
+
+
+function pid1(){
+
+
+var n1 = document.getElementById('num1').value
+var n2 = document.getElementById('num2').value
+
+
+tp = parseFloat(n1)  * parseFloat(n2) ;
+
+
+var answer = document.getElementById("TP");     
+     answer.innerHTML = 'THE TOTAL PRICE IS: ₱  ' + tp.toFixed(2);
+
+
+
+
+}
+function pid2(){
+
+var n2 = document.getElementById('num3').value
+
+
+cheyj = parseFloat(n2) - parseFloat(tp) ;
+
+
+var answer = document.getElementById("TC");     
+     answer.innerHTML = 'THE CHANGE IS: ₱ ' + cheyj.toFixed(2);
+
+     var rt= document.getElementById("receipt");
+    rt.addEventListener("click", function(){
+
+     var res1 = document.getElementById("name").value;
+     
+     var res2 = document.getElementById("num1").value;
+     var res3 = document.getElementById("num2").value;
+     rest = parseFloat(res2)* parseFloat(res3);
+     var res4 = document.getElementById("TP");
+     res4.innerHTML = rest;
+     
+     var res5 = document.getElementById("num3").value;
+     resq = parseFloat(res5) - parseFloat(rest) ;
+     var res6 = document.getElementById("TC");
+     res6.innerHTML=resq;
+     
+     
+
+     localStorage.setItem("re1", res1);
+     localStorage.setItem("re2", res2);
+     localStorage.setItem("re3", res3);
+     localStorage.setItem("re4", rest);
+     localStorage.setItem("re5", res5);
+     localStorage.setItem("re6", resq);
+     
+     window.location.href = "transactpage.html";
+
+});
+
+
+}
+
+
+
+
+    </script>
+</body>
+</html>
